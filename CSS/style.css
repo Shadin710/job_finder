@@ -1,0 +1,129 @@
+body {
+  background-image: linear-gradient(to left, #16302d 50%, #151820 50%);
+  margin: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 1);
+}
+/* TOTAL-PAGE-CONTAIN-SECTION*/
+
+section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* EACH-SECTION-SIZE*/
+.jumbotron {
+  width: 100%;
+  background: transparent;
+}
+
+/* PASSWORD-EYE-CSC */
+.eye {
+  position: absolute;
+  margin-top: 1.4rem;
+  margin-left: -2rem;
+}
+
+/* DEFAULT-USE*/
+.box {
+  padding: 3rem;
+}
+.display-4 {
+  font-size: 1.2rem;
+  font-family: "Baloo Tamma 2", cursive;
+  margin-bottom: 0.5rem;
+}
+
+/* LOG-IN-BOX-INPUT */
+.input1 {
+  background: transparent;
+  margin-top: 10px;
+  border: 0px;
+  border: 2px solid #16302d;
+  width: 100%;
+  color: rgba(255, 255, 255, 1);
+  padding: 10px;
+}
+
+/* COMPANY-TEXT-TYPES */
+.company-text-2 {
+  font-family: "Baloo Tamma 2", cursive;
+  text-align: center;
+  display: block;
+}
+.company-text {
+  font-family: "Baloo Tamma 2", cursive;
+  text-align: center;
+  display: block;
+  font-size: 3rem;
+}
+/* REGISTRATION-BOX-INPUT */
+.input2 {
+  background: transparent;
+  margin-top: 10px;
+  border: 0px;
+  border: 2px solid #151820;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+}
+::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* INPUT-SUBMIT-BUTTON */
+.btn-danger1 {
+  background: #16302d;
+  border-color: black;
+  border-color: #16302d;
+}
+.btn-danger1:hover {
+  background: transparent;
+  transition-delay: 0.3s;
+  border-color: #16302d;
+}
+
+/* REGISTRATION-SUBMIT-BUTTON */
+.btn-danger2 {
+  background: #151820;
+  border-color: black;
+  border-color: #151820;
+}
+.btn-danger2:hover {
+  background: transparent;
+  transition-delay: 0.3s;
+  border-color: #151820;
+}
+
+/*LINK */
+.text-design {
+  font-size: 12px;
+  margin-top: 0.5rem;
+}
+
+a {
+  color: white;
+  margin-left: 0.3rem;
+}
+a:hover {
+  color: white;
+  text-decoration: underline;
+  margin-left: 0.3rem;
+}
+
+/* SOCIAL-ICON */
+.social-icon-pack {
+  letter-spacing: 0.2rem;
+  font-size: 1.5rem;
+}
+
+/* RESPONSIVE-CSS */
+@media screen and (max-width: 767px) {
+  body {
+    background-image: linear-gradient(to top, #16302d 50%, #151820 50%);
+  }
+  section {
+    height: auto;
+  }
+}
