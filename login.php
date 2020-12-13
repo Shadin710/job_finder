@@ -31,7 +31,7 @@
                         <h6 class="text-muted" style="margin-top: 0.4rem;">Please Log-in to continue</h6>
 
                         <form novalidate action="/auth/" id="form" method="POST" onsubmit=" return validate() ">
-                            <input type="email" id="email" class="input input1" placeholder="Email" name="email"><br>
+                            <input type="email" id="email" class="input input1" placeholder="Email" name="email" style ="color: black" ><br>
                             <small style="margin-bottom: 0.3rem; font-style: italic;" id="error"></small>
 
                             <input type="password" class="input input1" placeholder="Password" id="password"
@@ -69,7 +69,7 @@
                 <div class="col-md-4">
                     <div class="jumbotron">
                         <h2 class="text-center" style=" font-family:'Baloo Tamma 2', cursive;">Register</h2>
-                        <h6 class="text-muted" style="margin-top: 0.4rem;">Create your account</h6>
+                       
                         <form action="register.php" method="POST">
                             <input type="text" class="input input2" placeholder="Name" name="name" required><br>
                             <input type="email" class="input input2" placeholder="Email" name="email" required><br>

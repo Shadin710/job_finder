@@ -1,9 +1,14 @@
 body {
-  background-image: linear-gradient(to left, #16302d 50%, #151820 50%);
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.69) 50%,
+    rgba(255, 255, 255, 0.69) 50%
+  );
   margin: 0;
   padding: 0;
-  color: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 1);
 }
+
 /* TOTAL-PAGE-CONTAIN-SECTION*/
 
 section {
@@ -13,6 +18,7 @@ section {
   justify-content: center;
 }
 /* EACH-SECTION-SIZE*/
+
 .jumbotron {
   width: 100%;
   background: transparent;
@@ -34,18 +40,21 @@ section {
   font-family: "Baloo Tamma 2", cursive;
   margin-bottom: 0.5rem;
 }
+/* INPUT-box */
 
-/* LOG-IN-BOX-INPUT */
-.input1 {
+.input {
   background: transparent;
   margin-top: 10px;
   border: 0px;
-  border: 2px solid #16302d;
+  border: 2px solid #151820;
   width: 100%;
-  color: rgba(255, 255, 255, 1);
+  color: black;
+  font-family: "Baloo Tamma 2", cursive;
   padding: 10px;
 }
-
+::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
 /* COMPANY-TEXT-TYPES */
 .company-text-2 {
   font-family: "Baloo Tamma 2", cursive;
@@ -58,42 +67,20 @@ section {
   display: block;
   font-size: 3rem;
 }
-/* REGISTRATION-BOX-INPUT */
-.input2 {
-  background: transparent;
-  margin-top: 10px;
-  border: 0px;
-  border: 2px solid #151820;
-  width: 100%;
-  color: rgba(255, 255, 255, 0.5);
-  padding: 10px;
-}
-::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.7);
-}
 
-/* INPUT-SUBMIT-BUTTON */
-.btn-danger1 {
-  background: #16302d;
-  border-color: black;
-  border-color: #16302d;
-}
-.btn-danger1:hover {
-  background: transparent;
-  transition-delay: 0.3s;
-  border-color: #16302d;
-}
-
-/* REGISTRATION-SUBMIT-BUTTON */
-.btn-danger2 {
+/* SUBMIT-BUTTON */
+.btn-danger {
   background: #151820;
   border-color: black;
   border-color: #151820;
+  font-family: "Baloo Tamma 2", cursive;
 }
-.btn-danger2:hover {
+.btn-danger:hover {
   background: transparent;
   transition-delay: 0.3s;
   border-color: #151820;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
 }
 
 /*LINK */
@@ -103,11 +90,11 @@ section {
 }
 
 a {
-  color: white;
+  color: rgb(0, 0, 0);
   margin-left: 0.3rem;
 }
 a:hover {
-  color: white;
+  color: rgb(0, 0, 0);
   text-decoration: underline;
   margin-left: 0.3rem;
 }
@@ -117,11 +104,15 @@ a:hover {
   letter-spacing: 0.2rem;
   font-size: 1.5rem;
 }
-
+.text-muted {
+  margin-top: 0.4rem;
+  color: #f7f7f7 50%;
+  font-family: "Baloo Tamma 2", cursive;
+}
 /* RESPONSIVE-CSS */
 @media screen and (max-width: 767px) {
   body {
-    background-image: linear-gradient(to top, #16302d 50%, #151820 50%);
+    background-image: linear-gradient(to top, #e7d3bd 50%, #e46a38 50%);
   }
   section {
     height: auto;
