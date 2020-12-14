@@ -20,7 +20,7 @@
         //insert every thing in database
 
         $sql = "INSERT INTO user_info (username,email,password) VALUES ('$name','$email','$pass')";
-        if(!mysqli_query($sql))
+        if(!mysqli_query($conn,$sql))
         {
             echo "registration Failed";
         }
@@ -29,4 +29,6 @@
             header('Location:login.php');
         }
     }
+    mysqli_close($conn);
+
 ?>
