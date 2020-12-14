@@ -30,16 +30,16 @@
 
         <ul class="menu-left">
             <li>
-                <a href="#">How we function?</a>
+                <a href="#">Find a job</a>
             </li>
             <li>
-                <a href="#">Services</a>
+                <a href="#">News Feed</a>
             </li>
             <li>
-                <a href="#">Pricing</a>
+                <a href="#">Company reviews</a>
             </li>
             <li>
-                <a href="#">Contact</a>
+                <a href="#">Find Salaries</a>
             </li>
         </ul>
         <ul class="menu-right">
@@ -68,9 +68,9 @@
             <p>
                 The world’s most widely deployed real-time content recommendations engine. Brought to you by Pulse.
             </p>
-            <a href="#" class="intro-cta" >
-                Try it for free
-            </a>
+            <a href="login.php" class="intro-cta" >
+              Sign-Up              
+        </a>
         </div>
         <div class="intro-right">
             <!-- Insert Image here -->
