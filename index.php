@@ -15,9 +15,6 @@
 
    <header id="header">
     <div class="wrapper">
-        <a href="/">
-                <img src="images/logo2.png" alt="logo">
-        </a>
 
         <button id="submenu" onclick="showMenu(event)">
             <span></span>
@@ -44,7 +41,7 @@
         </ul>
         <ul class="menu-right">
             <li class="menu-cta">
-                <a href="#">
+                <a href="auth.php">
                     Get Started
                 </a>
             </li>
@@ -64,9 +61,9 @@
     <div class="top-right-gradient"></div>
     <div class="wrapper">
         <div class="intro-left">
-            <h1>Creative Insights to grow your Business</h1>
+            <h1>Insights which will help you to grow</h1>
             <p>
-                The world’s most widely deployed real-time content recommendations engine. Brought to you by Pulse.
+                Open a account and start finding job that interests you
             </p>
             <a href="auth.php" class="intro-cta" >
               Sign-In              
