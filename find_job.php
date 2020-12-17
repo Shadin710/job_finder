@@ -46,9 +46,8 @@
     <div class="top-right-gradient"></div>
     <div class="wrapper">
         <div class="intro-left">
-            <h1>Insights which will help you to grow</h1>
-
-            
+            <input type="text" id= "first" placeholder = "What type of job" name="job_type">
+            <input type="text" id= "second" placeholder = "Where" name="region">
             <a href="auth.php" class="intro-cta" >
               Search             
         </a>
