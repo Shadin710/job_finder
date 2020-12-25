@@ -1,6 +1,5 @@
 <?php
-        
-
+        session_start();
         include_once 'includes/db_connection.php';
 
         $email = $_POST['email'];
@@ -14,9 +13,12 @@
             $result = mysqli_query($conn,$sql) or die("Failed to query the database" . mysqli_connect_error());
 
             $row = mysqli_fetch_assoc($result);
+            
             if($row['email']==$email && $row['pass'] == $password)
             {
-                header('Location:homepage.php');
+                $_SESSION['email']=$email;
+                header('Location:homepage.php');   
+
             }
             else
             {

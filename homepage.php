@@ -1,3 +1,13 @@
+<?php
+    session_start();
+
+    if(empty($_SESSION['email']))
+    {
+        header('Location:auth.php');
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +52,7 @@
                 <a href="find_salaries.php">Settings</a>
             </li>
             <li>
-                <a href="find_salaries.php">Logout</a>
+                <a href="logout.php">Logout</a>
             </li>
         </ul>
         <ul class="menu-right">
