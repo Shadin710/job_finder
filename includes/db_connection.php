@@ -1,18 +1,13 @@
 <?php
 
-    $dbHost = "localhost";
-    $dbUser= "root";    
-    $dbpassword = "";
-
-    $dbName = "job";
-    $conn = mysqli_connect($dbHost, $dbUser,$dbpassword,$dbName);
+    $conn = mysqli_connect('127.0.0.1','root','');
 
     if(!$conn)
     {
-        die("connection failed" . mysqli_connect_error());
+        echo "Not Connected to the server";
     }
-    else 
-    {    
-    echo "Connected";   
+    if(!mysqli_select_db($conn,'job'))
+    {
+        echo "database is not selected";
     }
 ?>

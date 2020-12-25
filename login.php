@@ -1,7 +1,7 @@
 <?php
-        define(ROOT,'./');
+        
 
-        include_once ROOT.'includes/db_connection.php';
+        include_once 'includes/db_connection.php';
 
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -10,11 +10,11 @@
         {
 
         
-            $sql = "SELECT * FROM user_info WHERE password = '$password' and email = '$email'";
+            $sql = "SELECT * FROM user_info WHERE pass = '$password' and email = '$email'";
             $result = mysqli_query($conn,$sql) or die("Failed to query the database" . mysqli_connect_error());
 
             $row = mysqli_fetch_assoc($result);
-            if($row['email']==$email && $row['password'] == $password)
+            if($row['email']==$email && $row['pass'] == $password)
             {
                 header('Location:homepage.php');
             }

@@ -30,7 +30,7 @@
                 <a href="find_job.php">Find a job</a>
             </li>
             <li>
-                <a href="feed.php">News Feed</a>
+                <a href="feed.php">Post a job</a>
             </li>
             <li>
                 <a href="company_review.php">Company reviews</a>
@@ -41,8 +41,8 @@
         </ul>
         <ul class="menu-right">
             <li class="menu-cta">
-                <a href="auth.php">
-                    Get Started
+                <a href="admin_auth.php">
+                    Admin
                 </a>
             </li>
         </ul>
@@ -121,9 +121,7 @@
 
         <div class="footer-left">
 
-            <a href="/">
-                <img src="images/logo2.png" alt="logo">
-            </a>
+
 
             <p class="footer-links">
 

@@ -1,7 +1,7 @@
 <?php
-    define(ROOT,'./');
+    
 
-    include_once ROOT.'includes/db_connection.php';
+    include_once 'includes/db_connection.php';
     $name = $_POST['name'];
     $email = $_POST['email'];
     $pass = $_POST['pass'];
@@ -19,15 +19,19 @@
     {
         //insert every thing in database
 
-        $sql = "INSERT INTO user_info (username,email,password) VALUES ('$name','$email','$pass')";
+        $sql = "INSERT INTO user_info (username,email,pass) VALUES ('$name','$email','$pass')";
         if(!mysqli_query($conn,$sql))
         {
-            echo "registration Failed";
+            echo("Error description: " . mysqli_error($conn));
         }
         else
         {
-            header('Location:login.php');
+            header('Location:auth.php');
         }
+    }
+    else
+    {
+        echo "error in regex";
     }
     mysqli_close($conn);
 
