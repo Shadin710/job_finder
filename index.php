@@ -89,12 +89,11 @@
         </div>
 
         <div class="about-right">
-            <h1>How we help YOU grow your Business</h1>
+            <h1>How do we help you</h1>
             <p>
-                Consume out-of-the-box data analytics anywhere, anytime. Take advantage of rich domain content , pre-built industry metrics, stunning visualizations, and data adaptors for cloud/business applications as well as big data sources.
-
+                we help you to find job depending on your skills and experience because of that you can choose the best job that suits you 
             </p>
-            <a href="#" class="cta">Learn More</a>
+            <a href="#" class="cta">Sign-up</a>
         </div>
     </div>
 
