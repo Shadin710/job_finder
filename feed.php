@@ -61,7 +61,7 @@ small{
                 <a href="company_review.php">Company reviews</a>
             </li>
             <li>
-                <a href="find_salaries.php">Find Salaries</a>
+                <a href="Profile.php">Profile</a>
             </li>
         </ul>
         <ul class="menu-right">
