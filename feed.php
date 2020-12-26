@@ -67,7 +67,7 @@ small{
         <ul class="menu-right">
             <li class="menu-cta">
                 <a href="auth.php">
-                    Get Started
+                    Admin 
                 </a>
             </li>
         </ul>

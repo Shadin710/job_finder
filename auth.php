@@ -77,7 +77,7 @@
                             <input type="password" class="input input2" placeholder="Confirm Password"
                                 name="pass2" required><br><br>
                             <input type="submit" class="btn btn-danger btn-danger2"
-                                style="margin-bottom: 10px;width: 100%;" value="Register Now">
+                                style="margin-bottom: 10px;width: 100%;" value="Register Now" name ="register">
                         </form>
                     </div>
                 </div>
