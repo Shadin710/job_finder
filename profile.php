@@ -1,12 +1,19 @@
 <?php
+
     session_start();
 
     if(empty($_SESSION['email']))
     {
         header('Location:auth.php');
     }
-?>
 
+    include_once 'includes/db_connection.php';
+    $email = $_SESSION['email'];
+    $sql_e = "SELECT * FROM user_bio WHERE email='$email'";
+
+    $result1 = mysqli_query($conn,$sql_e) or die("Failed to query the database" . mysqli_connect_error());
+    $row1 = mysqli_fetch_assoc($result1);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,8 +83,8 @@
             </div>
 
             <div class="profile-header-info">
-                <h4 class="m-t-sm">Clyde Stanley</h4>
-                <p class="m-b-sm">UXUI + Frontend Developer</p>
+                <h4 class="m-t-sm"><?php echo $row1['username'];?></h4>
+                <p class="m-b-sm"><?php echo $row1['occupation'];?></p>
                 <a href="setting.php" class="btn btn-xs btn-primary mb-3">Edit Profile</a>
             </div>
         </div>
@@ -107,12 +114,12 @@
                                     <td class="field">Work</td>
                                     <td class="value">
                                         <div class="m-b-5">
-                                            <b>Magnificient IT (2017)</b> <a href="#" class="m-l-10">Edit</a><br />
-                                            <span class="text-muted">PHP Programmer</span>
+                                            <b><?php echo $row1['work_place1'];?></b> <a href="#" class="m-l-10">Edit</a><br />
+                                            <span class="text-muted"><?php echo $row1['position_1'];?></span>
                                         </div>
                                         <div>
-                                            <b>Neutrino IT (2012)</b> <a href="#" class="m-l-10">Edit</a><br />
-                                            <span class="text-muted">UXUI / Frontend Developer</span>
+                                            <b><?php echo $row1['work_place2'];?></b> <a href="#" class="m-l-10">Edit</a><br />
+                                            <span class="text-muted"><?php echo $row1['position_2'];?></span>
                                         </div>
                                     </td>
                                 </tr>
@@ -120,19 +127,23 @@
                                     <td class="field">Education</td>
                                     <td class="value">
                                         <div class="m-b-5">
-                                            <b>University (2009)</b> <a href="#" class="m-l-10">Edit</a><br />
-                                            <span class="text-muted">University of Georgia, Athens, GA</span>
+                                            <b><?php echo "University (2009)";?></b> <a href="#" class="m-l-10">Edit</a><br />
+                                            <span class="text-muted"><?php echo $row1['uni_name'];?></span>
                                         </div>
                                         <div>
                                             <b>High School (2006)</b> <a href="#" class="m-l-10">Edit</a><br />
-                                            <span class="text-muted">Heritage High School, West Chestter, PA</span>
+                                            <span class="text-muted"><?php echo $row1['high_name'];?></span>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="field">Skills</td>
                                     <td class="value">
-                                        C++, PHP, HTML5, CSS, jQuery, MYSQL, Ionic, Laravel, Phonegap, Bootstrap, Angular JS, Angular JS, Asp.net
+                                        <?php
+                                            for ($i=0; $i <5 ; $i++) { 
+                                                echo $row1['skill'.$i];
+                                            }
+                                        ?>
                                     </td>
                                 </tr>
                             </tbody>
@@ -147,28 +158,36 @@
                                 <tr>
                                     <td class="field">Mobile Phones</td>
                                     <td class="value">
-                                        +44 7700 900860
+                                       <?php
+                                            echo $row1['phone_number'];
+                                       ?>
                                         <a href="#" class="m-l-10">Edit</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="field">Email</td>
                                     <td class="value">
-                                        admin@infinite.com
+                                     <?php
+                                            echo $row1['email'];
+                                       ?>
                                         <a href="#" class="m-l-10">Edit</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="field">Facebook</td>
                                     <td class="value">
-                                        http://facebook.com/infinite.admin
+                                    <?php
+                                            echo $row1['fb_url'];
+                                       ?>
                                         <a href="#" class="m-l-10">Edit</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="field">Website</td>
                                     <td class="value">
-                                        http://seantheme.com
+                                    <?php
+                                            echo $row1['web_url'];
+                                       ?>
                                         <a href="#" class="m-l-10">Edit</a>
                                     </td>
                                 </tr>
@@ -192,28 +211,32 @@
                                 <tr>
                                     <td class="field">Birth of Date</td>
                                     <td class="value">
-                                        November 4, 1989
+                                    <?php
+                                            echo $row1['dob'];
+                                    ?>
                                         <a href="#" class="m-l-10">Edit</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="field">Gender</td>
                                     <td class="value">
-                                        Male
+                                    <?php
+                                            echo $row1['gender'];
+                                    ?>
                                         <a href="#" class="m-l-10">Edit</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="field">Facebook</td>
                                     <td class="value">
-                                        http://facebook.com/infinite.admin
+                                        <?php echo $row1['fb_url']?>
                                         <a href="#" class="m-l-10">Edit</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="field">Website</td>
                                     <td class="value">
-                                        http://seantheme.com
+                                        <?php echo $row1['web_url']?>
                                         <a href="#" class="m-l-10">Edit</a>
                                     </td>
                                 </tr>
@@ -228,19 +251,31 @@
                     <li class="title">PERSONAL INFORMATION</li>
                     <li>
                         <div class="field">Occupation:</div>
-                        <div class="value">UXUI / Frontend Developer</div>
+                        <div class="value"><?php
+                                            echo $row1['occupation'];
+                                       ?></div>
                     </li>
                     <li>
                         <div class="field">Skills:</div>
-                        <div class="value">C++, PHP, HTML5, CSS, jQuery, MYSQL, Ionic, Laravel, Phonegap, Bootstrap, Angular JS, Angular JS, Asp.net</div>
+                        <div class="value"> <?php
+                        for ($i=0; $i <5 ; $i++) 
+                        { 
+                            echo $row1['skill'.$i] . ', ';
+                            if($i==5)
+                            {
+                                echo $row1['skill'.$i];
+                            }
+                        }
+                        ?>
+                        </div>
                     </li>
                     <li>
                         <div class="field">Birth of Date:</div>
-                        <div class="value">1989/11/04</div>
+                        <div class="value"><?php echo $row1['dob'];?></div>
                     </li>
                     <li>
                         <div class="field">Country:</div>
-                        <div class="value">San Francisco</div>
+                        <div class="value"><?php echo $row1['country']?></div>
                     </li>
                     <li>
                         <div class="field">Address:</div>
@@ -255,20 +290,8 @@
                     <li>
                         <div class="field">Phone No.:</div>
                         <div class="value">
-                            (123) 456-7890
+                            <?php echo $row1['phone_number']?>
                         </div>
-                    </li>
-                    <li class="title">FRIEND LIST (9)</li>
-                    <li class="img-list">
-                        <a href="#" class="m-b-5"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" /></a>
-                        <a href="#" class="m-b-5"><img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="" /></a>
-                        <a href="#" class="m-b-5"><img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="" /></a>
-                        <a href="#" class="m-b-5"><img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="" /></a>
-                        <a href="#" class="m-b-5"><img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" /></a>
-                        <a href="#" class="m-b-5"><img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" /></a>
-                        <a href="#" class="m-b-5"><img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="" /></a>
-                        <a href="#" class="m-b-5"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" /></a>
-                        <a href="#" class="m-b-5"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" /></a>
                     </li>
                 </ul>
             </div>

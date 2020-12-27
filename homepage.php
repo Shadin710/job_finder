@@ -49,17 +49,10 @@
                 <a href="find_salaries.php">Find Salaries</a>
             </li>
             <li>
-                <a href="find_salaries.php">Settings</a>
+                <a href="profile.php">Profile</a>
             </li>
             <li>
                 <a href="logout.php">Logout</a>
-            </li>
-        </ul>
-        <ul class="menu-right">
-            <li class="menu-cta">
-                <a href="auth.php">
-                    Get Started
-                </a>
             </li>
         </ul>
     </div>

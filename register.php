@@ -8,7 +8,7 @@
     $email = $_POST['email'];
     $pass = $_POST['pass'];
     $pass2 = $_POST['pass2'];
-
+    $occupation = $work_place1 = $work_place2 = $position_1 = $position_2 = $uni_name = $high_name = $skill0 = $skill1 = $skill2 = $skill3 = $skill4 = $phone_number = $fb_url = $web_url = $addres = $country = $dob = $gender = ''; 
     $name_regex = '/^([A-Z]([a-z]){3,7}[0-9]{1,4})$/';
     $email_regex = '/^\w+([-+.\']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/';
     $pass_regex = '/^([A-z]+([0-9]+)?([@#$&%]+)?){6,20}$/';
@@ -35,13 +35,24 @@
             //insert every thing in database
 
             $sql = "INSERT INTO user_info (username,email,pass) VALUES ('$name','$email','$pass')";
+            
             if(!mysqli_query($conn,$sql))
             {
                 echo("Error description: " . mysqli_error($conn));
             }
             else
             {
-                header('Location:auth.php');
+                $sql_1= "INSERT INTO user_bio (username,email,occupation,work_place1,work_place2,position_1,position_2,uni_name,high_name,skill0,skill1,skill2,skill3,skill4,phone_number,fb_url,web_url,addres,country,dob,gender) VALUES ('$name','$email','$occupation','$work_place1','$work_place2','$position_1','$position_2','$uni_name','$high_name','$skill0','$skill1','$skill2','$skill3','$skill4','$phone_number','$fb_url','$web_url','$addres','$country','$dob','$gender')";
+
+                if(!mysqli_query($conn,$sql_1))
+                {
+                    echo("Error description: " . mysqli_error($conn));
+                }
+                else
+                {
+                    header('Location:auth.php');
+                }
+                echo "Inserted the data in user info but not user bio";
             }
         }
     
