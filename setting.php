@@ -5,6 +5,7 @@
     {
         header('Location:auth.php');
     }
+    include_once 'includes/variable.php';
 ?>
 
 <!DOCTYPE html>
@@ -61,6 +62,7 @@
         </ul>
     </div>
 </header>
+<form action="change.php" method = "POST">
 <div class="container light-style flex-grow-1 container-p-y" id="mar">
     <div class="card overflow-hidden">
       <div class="row no-gutters row-bordered row-border-light">
@@ -69,7 +71,7 @@
             <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account-general">General</a>
             <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-change-password">Change password</a>
             <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-info">Info</a>
-            <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-social-links">Social links</a>
+            <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-social-links">Education & Occupation</a>
             <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-connections">Connections</a>
             <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-notifications">Notifications</a>
           </div>
@@ -95,19 +97,19 @@
               <div class="card-body">
                 <div class="form-group">
                   <label class="form-label">Username</label>
-                  <input type="text" class="form-control mb-1" value="nmaxwell">
+                  <input type="text" class="form-control mb-1" value="" name="uname">
                 </div>
                 <div class="form-group">
                   <label class="form-label">Name</label>
-                  <input type="text" class="form-control" value="Nelle Maxwell">
+                  <input type="text" class="form-control" value="" name="full_name">
                 </div>
                 <div class="form-group">
                   <label class="form-label">E-mail</label>
-                  <input type="text" class="form-control mb-1" value="nmaxwell@mail.com">
+                  <input type="text" class="form-control mb-1" value="" name="email">
                 </div>
                 <div class="form-group">
                   <label class="form-label">Company</label>
-                  <input type="text" class="form-control" value="Company Ltd.">
+                  <input type="text" class="form-control" value="" name="company_name">
                 </div>
               </div>
 
@@ -117,17 +119,17 @@
 
                 <div class="form-group">
                   <label class="form-label">Current password</label>
-                  <input type="password" class="form-control">
+                  <input type="password" class="form-control" name = "pass">
                 </div>
 
                 <div class="form-group">
                   <label class="form-label">New password</label>
-                  <input type="password" class="form-control">
+                  <input type="password" class="form-control" name ="new_pass">
                 </div>
 
                 <div class="form-group">
                   <label class="form-label">Repeat new password</label>
-                  <input type="password" class="form-control">
+                  <input type="password" class="form-control" name = "re_pass">
                 </div>
 
               </div>
@@ -140,17 +142,30 @@
                   <textarea class="form-control" rows="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nunc arcu, dignissim sit amet sollicitudin iaculis, vehicula id urna. Sed luctus urna nunc. Donec fermentum, magna sit amet rutrum pretium, turpis dolor molestie diam, ut lacinia diam risus eleifend sapien. Curabitur ac nibh nulla. Maecenas nec augue placerat, viverra tellus non, pulvinar risus.</textarea>
                 </div>
                 <div class="form-group">
+                  <label class="form-label">Gender</label>
+                  <select class="custom-select" name = "gender">
+                    <option  value = "Male" >Male</option>
+                    <option  value = "Female">Female</option>
+                  </select>
+                </div>
+                <div class="form-group">
                   <label class="form-label">Birthday</label>
-                  <input type="text" class="form-control" value="May 3, 1995">
+                  <input type="text" class="form-control" value="" name="dob">
                 </div>
                 <div class="form-group">
                   <label class="form-label">Country</label>
-                  <select class="custom-select">
-                    <option>USA</option>
-                    <option selected="">Canada</option>
-                    <option>UK</option>
-                    <option>Germany</option>
-                    <option>France</option>
+                  <select class="custom-select" name = "country">
+                    <option  value = "Bangladesh" >Bangladesh</option>
+                    <option  value = "Canada">Canada</option>
+                    <option  value = "UK">UK</option>
+                    <option  value = "Germany">Germany</option>
+                    <option  value = "USA">USA</option>
+                    <option  value = "India">India</option>
+                    <option  value = "Pakistan">Pakistan</option>
+                    <option  value = "Japan">Japan</option>
+                    <option  value = "China">China</option>
+                    <option  value = "Italy">Italy</option>
+                    <option  value = "USA">USA</option>
                   </select>
                 </div>
 
@@ -162,40 +177,49 @@
                 <h6 class="mb-4">Contacts</h6>
                 <div class="form-group">
                   <label class="form-label">Phone</label>
-                  <input type="text" class="form-control" value="+0 (123) 456 7891">
+                  <input type="text" class="form-control" value="" name="phone_number">
                 </div>
                 <div class="form-group">
                   <label class="form-label">Website</label>
-                  <input type="text" class="form-control" value="">
+                  <input type="text" class="form-control" value="" name= "web_url">
                 </div>
-
+                <div class="form-group">
+                  <label class="form-label">Facebook</label>
+                  <input type="text" class="form-control" value="" name= "fb_url">
+                </div>
               </div>
-      
             </div>
             <div class="tab-pane fade" id="account-social-links">
               <div class="card-body pb-2">
 
                 <div class="form-group">
-                  <label class="form-label">Twitter</label>
-                  <input type="text" class="form-control" value="https://twitter.com/user">
+                  <label class="form-label">High School</label>
+                  <input type="text" class="form-control" value="" name="high_name">
                 </div>
                 <div class="form-group">
-                  <label class="form-label">Facebook</label>
-                  <input type="text" class="form-control" value="https://www.facebook.com/user">
+                  <label class="form-label">University</label>
+                  <input type="text" class="form-control" value="" name = "uni_name">
                 </div>
                 <div class="form-group">
-                  <label class="form-label">Google+</label>
-                  <input type="text" class="form-control" value="">
+                  <label class="form-label">Occupation</label>
+                  <input type="text" class="form-control" value="" name = "occupation">
                 </div>
                 <div class="form-group">
-                  <label class="form-label">LinkedIn</label>
-                  <input type="text" class="form-control" value="">
+                  <label class="form-label">Company</label>
+                  <input type="text" class="form-control" value="" name="c_name1">
                 </div>
                 <div class="form-group">
-                  <label class="form-label">Instagram</label>
-                  <input type="text" class="form-control" value="https://www.instagram.com/user">
+                  <label class="form-label">Position</label>
+                  <input type="text" class="form-control" value="" name = "position1">
                 </div>
-
+                <div class="form-group">
+                  <label class="form-label">Previously worked</label>
+                  <input type="text" class="form-control" value="" name="c_name2">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Position</label>
+                  <input type="text" class="form-control" value="" name = "position2">
+                </div>
               </div>
             </div>
             <div class="tab-pane fade" id="account-connections">
@@ -209,7 +233,7 @@
                   <i class="ion ion-logo-google text-google"></i>
                   You are connected to Google:
                 </h5>
-                nmaxwell@mail.com
+                <?php echo $_SESSION['email']?>
               </div>
               <hr class="border-light m-0">
               <div class="card-body">
@@ -300,11 +324,12 @@
     </div>
 
     <div class="text-right mt-3">
-      <button type="button" class="btn btn-primary">Save changes</button>&nbsp;
-      <button type="button" class="btn btn-default">Cancel</button>
+      <button type="Submit" class="btn btn-primary">Save changes</button>&nbsp;
+      <a href="profile.php"><button type="button" class="btn btn-default">  Cancel</button></a>
     </div>
-
+ 
   </div>
+  </form>
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script type="text/javascript">

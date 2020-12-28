@@ -17,6 +17,7 @@
             if($row['email']==$email && $row['pass'] == $password)
             {
                 $_SESSION['email']=$email;
+                $_SESSION['main_pass'] = $password;
                 header('Location:homepage.php');   
 
             }
