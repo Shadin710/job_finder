@@ -6,10 +6,9 @@
     }
     include_once 'includes/db_connection.php';
     include_once 'includes/variable.php';
-
-
     if($_SERVER['REQUEST_METHOD']=='POST')
     {
+        $email = $_SESSION['email'];
         $uname  = $_POST['uname'];
         $full_name = $_POST['full_name'];
         $new_email = $_POST['email'];
@@ -64,7 +63,7 @@
             }
             else
             {
-                $sql_e ="SELECT * FROM user_info WHERE pass = '$pass' and email = '$email'";
+                $sql_e ="SELECT * FROM user_info WHERE email = '$new_email'";
                 $result = mysqli_query($conn,$sql_e) or die("Failed to query the database" . mysqli_connect_error());
 
                 $count = mysqli_num_rows($result);
@@ -75,7 +74,7 @@
                 }
                 else
                 {
-                    $sql = "INSERT INTO user_bio () VALUES "
+                    $sql = "UPDATE user_bio SET username = '$uname', email = '$new_email',occupation= '$occupation', work_place1 = '$cname1',work_place2='$cname2',position_1='$postion1',position_2='$postion2',uni_name='$uni_name',high_name='$high_name',skill0='',skill1='',skill2='',skill3='',skill4='',phone_number='$phone_number',fb_url='$fb_url',web_url='$web_url',addres='',country='$country',dob='$dob',gender='$gender' where email = '$email'";
                 }
             }
         }
