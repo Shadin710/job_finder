@@ -15,7 +15,7 @@
 
     $row = mysqli_fetch_assoc($result);
 
-    $sql_best = "SELECT * FROM post_job WHERE salary >=50000";
+    $sql_best = "SELECT * FROM post_job WHERE salary >=50000 order by salary desc";
     $sql_recent = "SELECT * FROM post_job order by id desc";
     $sql_recommend = "SELECT * FROM post_job";
 
@@ -28,8 +28,10 @@
     $recent_check  = mysqli_num_rows($result_recent);
 
     //recommended jobs
-    $result_recommend= mysqli_query($conn,$sql_recommend) or die("Failed to query the database" . mysqli_connect_error());
+	$result_recommend= mysqli_query($conn,$sql_recommend) or die("Failed to query the database" . mysqli_connect_error());
 	$recommend_check  = mysqli_num_rows($result_recommend);
+	$result_r= mysqli_query($conn,$sql_recommend) or die("Failed to query the database" . mysqli_connect_error());
+
 ?>
 
 
@@ -362,16 +364,16 @@
 
         <ul class="menu-left">
             <li>
-                <a href="find_job.php">Find a job</a>
+                <a href="homepage.php">Homepage</a>
             </li>
             <li>
-                <a href="feed.php">News Feed</a>
+                <a href="feed.php">Post a Job</a>
             </li>
             <li>
-                <a href="company_review.php">Company reviews</a>
+                <a href="search.php">Search</a>
             </li>
             <li>
-                <a href="find_salaries.php">Find Salaries</a>
+                <a href="Notification.php">Notifications</a>
             </li>
             <li>
                 <a href="profile.php">Profile</a>
@@ -445,7 +447,7 @@
 											</div>
 											<span class="tr-title">
 												<a href="#">' . $row_best['comName'] . '</a><br />
-												<a href="#">' . $row_best['postion'] . '</a>
+												<a href="#">' . $row_best['position'] . '</a>
 												<span><a href="#">Dig File</a></span>
 											</span>
 											<ul class="tr-list job-meta">
@@ -473,13 +475,13 @@
 					<?php
 						if($recent_check>0)
 						{
-							while($row_recrent = mysqli_fetch_assoc())
+							while($row_recent = mysqli_fetch_assoc($result_recent))
 							{
 								echo '<div class="col-md-6 col-lg-3">
 								<div class="job-item">
 									<div class="item-overlay">
 										<div class="job-info">
-										<a href="#" class="btn btn-primary">'. $row_recrent['type_time'] .'</a>
+										<a href="#" class="btn btn-primary">'. $row_recent['type_time'] .'</a>
 											<span class="tr-title">
 												<a href="#">' . $row_recent['position'] . '</a>
 												<span><a href="#">Loop</a></span>
@@ -537,23 +539,23 @@
 									{
 										$count_recom++;
 									}
-									if($row_recommend['skill']==$row['skill0'])
+									if(($row_recommend['skill']==$row['skill0']) Or ($row_recommend['skill']==$row['skill1']) Or ($row_recommend['skill']==$row['skill2']) Or ($row_recommend['skill']==$row['skill3']) Or ($row_recommend['skill']==$row['skill4']))
 									{
 										$count_recom++;
 									}
-									if($row_recommend['skill1']==$row['skill1'])
+									if(($row_recommend['skill1']==$row['skill0']) Or ($row_recommend['skill1']==$row['skill1']) Or ($row_recommend['skill1']==$row['skill2']) Or ($row_recommend['skill1']==$row['skill3']) Or ($row_recommend['skill1']==$row['skill4']))									
 									{
 										$count_recom++;
 									}
-									if($row_recommend['skill2']==$row['skill2'])
+									if(($row_recommend['skill2']==$row['skill0']) Or ($row_recommend['skill2']==$row['skill1']) Or ($row_recommend['skill2']==$row['skill2']) Or ($row_recommend['skill2']==$row['skill3']) Or ($row_recommend['skill2']==$row['skill4']))
 									{
 										$count_recom++;
 									}
-									if($row_recommend['skill3']==$row['skill3'])
+									if(($row_recommend['skill3']==$row['skill0']) Or ($row_recommend['skill3']==$row['skill1']) Or ($row_recommend['skill3']==$row['skill2']) Or ($row_recommend['skill3']==$row['skill3']) Or ($row_recommend['skill3']==$row['skill4']))
 									{
 										$count_recom++;
 									}
-									if($row_recommend['skill4']==$row['skill4'])
+									if(($row_recommend['skill4']==$row['skill0']) Or ($row_recommend['skill4']==$row['skill1']) Or ($row_recommend['skill4']==$row['skill2']) Or ($row_recommend['skill4']==$row['skill3']) Or ($row_recommend['skill4']==$row['skill4']))
 									{
 										$count_recom++;
 									}
@@ -561,6 +563,7 @@
 									$count_arry = array();
 									array_push($count_arry,$count_recom);
 								}
+								$refactor_index = array();
 								for ($i=0; $i <$recommend_check; $i++) { 
 									// helps us to get the max value
 									$get_max = max($count_arry);
@@ -578,16 +581,19 @@
 										}
 								}
 								
-							for ($i=0; $i <count($refactor_index);) 
+							for ($i=0; $i <count($refactor_index);$i++) 
 							{ 
 									
 								$cou=0;
-								while($row_r = mysqli_fetch_assoc($result_recommend)) 
+								$j=0;
+								$result_r=array();
+								$result_r[$j] = mysqli_query($conn,$sql_recommend) Or die("Failed to query " . mysqli_error($conn));
+
+								while($row_r =mysqli_fetch_assoc($result_r[$j])) 
 								{ 
 								
-									
 									if($cou == $refactor_index[$i])
-									{
+									{	
 										echo '<div class="col-md-6 col-lg-3">
 										<div class="job-item">
 											<div class="item-overlay">
@@ -630,12 +636,13 @@
 											</div>
 										</div>
 									</div>';
-									$i++;
+									
 									break;
 									}
 									$cou++;
 									
 								}
+								$j++;
 							}
 						}
 					?>
@@ -666,10 +673,6 @@
     <div class="wrapper">
 
         <div class="footer-left">
-
-            <a href="/">
-                <img src="images/logo2.png" alt="logo">
-            </a>
 
             <p class="footer-links">
 
