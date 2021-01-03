@@ -38,19 +38,16 @@
 
         <ul class="menu-left">
             <li>
-                <a href="find_job.php">Find a job</a>
+                <a href="homepage.php">Homepage</a>
             </li>
             <li>
-                <a href="feed.php">News Feed</a>
+                <a href="feed.php">Post a Job</a>
             </li>
             <li>
-                <a href="company_review.php">Company reviews</a>
+                <a href="Notification.php">Notifications</a>
             </li>
             <li>
-                <a href="find_salaries.php">Find Salaries</a>
-            </li>
-            <li>
-                <a href="find_salaries.php">Settings</a>
+                <a href="search.php">Search</a>
             </li>
         </ul>
         <ul class="menu-right">
@@ -86,7 +83,7 @@
                     Upload new photo
                     <input type="file" class="account-settings-fileinput">
                   </label> &nbsp;
-                  <button type="button" class="btn btn-default md-btn-flat">Reset</button>
+                 
 
                   <div class="text-light small mt-1">Allowed JPG, GIF or PNG. Max size of 800K</div>
                 </div>
