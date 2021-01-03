@@ -73,7 +73,6 @@
             <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-info">Info</a>
             <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-social-links">Education & Occupation</a>
             <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-connections">Connections</a>
-            <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-notifications">Notifications</a>
           </div>
         </div>
         <div class="col-md-9">
@@ -98,14 +97,17 @@
                 <div class="form-group">
                   <label class="form-label">Username</label>
                   <input type="text" class="form-control mb-1" value="" name="uname">
+                  <span class = "error"><?php echo $name_err;?></span>
                 </div>
                 <div class="form-group">
                   <label class="form-label">Name</label>
                   <input type="text" class="form-control" value="" name="full_name">
+
                 </div>
                 <div class="form-group">
                   <label class="form-label">E-mail</label>
                   <input type="text" class="form-control mb-1" value="" name="email">
+                  <span class = "error"><?php echo  $email_err;?></span>
                 </div>
                 <div class="form-group">
                   <label class="form-label">Company</label>
@@ -120,16 +122,19 @@
                 <div class="form-group">
                   <label class="form-label">Current password</label>
                   <input type="password" class="form-control" name = "pass">
+                  <span class = "error"><?php echo $pass_matchErr;?></span>
                 </div>
 
                 <div class="form-group">
                   <label class="form-label">New password</label>
                   <input type="password" class="form-control" name ="new_pass">
+                  <span class = "error"><?php echo  $pass_err;?></span>
                 </div>
 
                 <div class="form-group">
                   <label class="form-label">Repeat new password</label>
                   <input type="password" class="form-control" name = "re_pass">
+                  <span class = "error"><?php echo $repass;?></span>
                 </div>
 
               </div>
@@ -138,8 +143,8 @@
               <div class="card-body pb-2">
 
                 <div class="form-group">
-                  <label class="form-label">Bio</label>
-                  <textarea class="form-control" rows="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nunc arcu, dignissim sit amet sollicitudin iaculis, vehicula id urna. Sed luctus urna nunc. Donec fermentum, magna sit amet rutrum pretium, turpis dolor molestie diam, ut lacinia diam risus eleifend sapien. Curabitur ac nibh nulla. Maecenas nec augue placerat, viverra tellus non, pulvinar risus.</textarea>
+                  <label class="form-label">Address</label>
+                  <input type="text" class="form-control" value="" name="addres">
                 </div>
                 <div class="form-group">
                   <label class="form-label">Gender</label>
@@ -224,102 +229,35 @@
             </div>
             <div class="tab-pane fade" id="account-connections">
               <div class="card-body">
-                <button type="button" class="btn btn-twitter">Connect to <strong>Twitter</strong></button>
+              <label class="form-label">Skills</label>
+                  <input type="text" class="form-control" value="" name = "skill0">
+              </div>
+             
+              <div class="card-body">
+              <label class="form-label">Skills</label>
+                  <input type="text" class="form-control" value="" name = "skill1">
               </div>
               <hr class="border-light m-0">
               <div class="card-body">
-                <h5 class="mb-2">
-                  <a href="javascript:void(0)" class="float-right text-muted text-tiny"><i class="ion ion-md-close"></i> Remove</a>
-                  <i class="ion ion-logo-google text-google"></i>
-                  You are connected to Google:
-                </h5>
-                <?php echo $_SESSION['email']?>
+              <label class="form-label">Skills</label>
+                  <input type="text" class="form-control" value="" name = "skill2">
               </div>
               <hr class="border-light m-0">
               <div class="card-body">
-                <button type="button" class="btn btn-facebook">Connect to <strong>Facebook</strong></button>
-              </div>
-              <hr class="border-light m-0">
-              <div class="card-body">
-                <button type="button" class="btn btn-instagram">Connect to <strong>Instagram</strong></button>
-              </div>
+              <label class="form-label">Skills</label>
+                  <input type="text" class="form-control" value="" name = "skill3">
             </div>
-            <div class="tab-pane fade" id="account-notifications">
-              <div class="card-body pb-2">
-
-                <h6 class="mb-4">Activity</h6>
-
-                <div class="form-group">
-                  <label class="switcher">
-                    <input type="checkbox" class="switcher-input" checked="">
-                    <span class="switcher-indicator">
-                      <span class="switcher-yes"></span>
-                      <span class="switcher-no"></span>
-                    </span>
-                    <span class="switcher-label">Email me when someone comments on my article</span>
-                  </label>
-                </div>
-                <div class="form-group">
-                  <label class="switcher">
-                    <input type="checkbox" class="switcher-input" checked="">
-                    <span class="switcher-indicator">
-                      <span class="switcher-yes"></span>
-                      <span class="switcher-no"></span>
-                    </span>
-                    <span class="switcher-label">Email me when someone answers on my forum thread</span>
-                  </label>
-                </div>
-                <div class="form-group">
-                  <label class="switcher">
-                    <input type="checkbox" class="switcher-input">
-                    <span class="switcher-indicator">
-                      <span class="switcher-yes"></span>
-                      <span class="switcher-no"></span>
-                    </span>
-                    <span class="switcher-label">Email me when someone follows me</span>
-                  </label>
-                </div>
-              </div>
-              <hr class="border-light m-0">
-              <div class="card-body pb-2">
-
-                <h6 class="mb-4">Application</h6>
-
-                <div class="form-group">
-                  <label class="switcher">
-                    <input type="checkbox" class="switcher-input" checked="">
-                    <span class="switcher-indicator">
-                      <span class="switcher-yes"></span>
-                      <span class="switcher-no"></span>
-                    </span>
-                    <span class="switcher-label">News and announcements</span>
-                  </label>
-                </div>
-                <div class="form-group">
-                  <label class="switcher">
-                    <input type="checkbox" class="switcher-input">
-                    <span class="switcher-indicator">
-                      <span class="switcher-yes"></span>
-                      <span class="switcher-no"></span>
-                    </span>
-                    <span class="switcher-label">Weekly product updates</span>
-                  </label>
-                </div>
-                <div class="form-group">
-                  <label class="switcher">
-                    <input type="checkbox" class="switcher-input" checked="">
-                    <span class="switcher-indicator">
-                      <span class="switcher-yes"></span>
-                      <span class="switcher-no"></span>
-                    </span>
-                    <span class="switcher-label">Weekly blog digest</span>
-                  </label>
-                </div>
-
-              </div>
+            <hr class="border-light m-0">
+              <div class="card-body">
+              <label class="form-label">Skills</label>
+                  <input type="text" class="form-control" value="" name = "skill4">
             </div>
+
+
+
           </div>
         </div>
+
       </div>
     </div>
 
