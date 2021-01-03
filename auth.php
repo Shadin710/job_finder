@@ -1,6 +1,13 @@
+
+<?php
+    session_start();
+    if(!empty($_SESSION['email'])&& $_SESSION['check']!=0)
+    {
+        header("Location:homepage.php");
+    }
+?>
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Job Finder</title>
     <!--Meta tag-->
