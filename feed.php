@@ -101,8 +101,23 @@ small{
           <input type="text" id="fname" name="res" placeholder="Responsibilities">
       <div class = "skill">
           <label for="skill"></label>
-         <input type="text" id="skill" name="skill" placeholder="Desired Skill">
-         <small class="small">Add</small>
+         <input type="text" id="skill" name="skill0" placeholder="Desired Skill">
+      </div>
+      <div class = "skill">
+          <label for="skill"></label>
+         <input type="text" id="skill" name="skill1" placeholder="Desired Skill">
+      </div>
+      <div class = "skill">
+          <label for="skill"></label>
+         <input type="text" id="skill" name="skill2" placeholder="Desired Skill">
+      </div>
+      <div class = "skill">
+          <label for="skill"></label>
+         <input type="text" id="skill" name="skill3" placeholder="Desired Skill">
+      </div>
+      <div class = "skill">
+          <label for="skill"></label>
+         <input type="text" id="skill" name="skill4" placeholder="Desired Skill">
       </div>
       <input type="text" id="fname" name="qua" placeholder="Qualification">
       <input type="number" id="fname" name="salary" placeholder="Salary">
@@ -123,8 +138,7 @@ small{
     </div>
     <div class="bottom-left-gradient"></div>
 </section>
-<script src="./js/dynamic_input.js">
-</script>
+
 
 </body>
 </html>
