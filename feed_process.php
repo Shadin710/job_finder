@@ -8,7 +8,6 @@
         $position = $_POST['position'];
         $comAddress = $_POST['caddress'];
         $res = $_POST['res'];
-        $skill = $_POST['skill'];
         $skill0 = $_POST['skill0'];
         $skill1 = $_POST['skill1'];
         $skill2 = $_POST['skill2'];
@@ -20,10 +19,6 @@
 
         $qua = $_POST['qua'];
 
-        $sql_dup = "SELECT * FROM post_job WHERE $comName='comName' and $position = 'position' and $comAddress = 'comAddress'";
-        $result = mysqli_query($conn,$sql_dup) or die("Failed to query the database" . mysqli_connect_error());
-
-        $job_count = mysqli_num_rows($result);
 
         if($job_count>0)
         {
@@ -32,7 +27,7 @@
         }
         else
         {
-            $sql = "INSERT INTO post_job (comName,position,comAddress,responsibility,skill,skill1,skill2,skill3,skill4, salary,exper,type_time) VALUES ('$comName','$position','$comAddress','$res','$skill','$skill0','$skill1','$skill2','$skill3','$skill4','$salary','$exper','$type_time')";
+            $sql = "INSERT INTO post_job (comName,position,comAddress,responsibility,skill,skill1,skill2,skill3,skill4, salary,exper,type_time) VALUES ('$comName','$position','$comAddress','$res','$skill0','$skill1','$skill2','$skill3','$skill4','$salary','$exper','$type_time')";
 
             if(!mysqli_query($conn,$sql))
             {
@@ -40,7 +35,7 @@
             }
             else
             {
-                header('Location:jobs.php');
+                header('Location:homepage.php');
             }
         }
     }
