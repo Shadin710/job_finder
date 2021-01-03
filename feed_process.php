@@ -14,6 +14,10 @@
         $skill2 = $_POST['skill2'];
         $skill3 = $_POST['skill3'];
         $skill4 = $_POST['skill4'];
+        $salary = $_POST['salary'];
+        $exper = $_POST['exper'];
+        $type_time = $_POST['type_time'];
+
         $qua = $_POST['qua'];
 
         $sql_dup = "SELECT * FROM post_job WHERE $comName='comName' and $position = 'position' and $comAddress = 'comAddress'";
@@ -28,7 +32,7 @@
         }
         else
         {
-            $sql = "INSERT INTO post_job (comName,position,comAddress,responsibility,skill,skill1,skill2,skill3,skill4) VALUES ('$comName','$position','$comAddress','$res','$skill','$skill0','$skill1','$skill2','$skill3','$skill4')";
+            $sql = "INSERT INTO post_job (comName,position,comAddress,responsibility,skill,skill1,skill2,skill3,skill4, salary,exper,type_time) VALUES ('$comName','$position','$comAddress','$res','$skill','$skill0','$skill1','$skill2','$skill3','$skill4','$salary','$exper','$type_time')";
 
             if(!mysqli_query($conn,$sql))
             {
