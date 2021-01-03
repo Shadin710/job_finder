@@ -25,6 +25,22 @@ input[type=text] {
   border: 2px solid red;
   border-radius: 4px;
 }
+input[type=number] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 4px;
+}
+.sel{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 4px;
+}
 small{
     font-size: 20px;
     padding-left: 2px;
@@ -89,6 +105,18 @@ small{
          <small class="small">Add</small>
       </div>
       <input type="text" id="fname" name="qua" placeholder="Qualification">
+      <input type="number" id="fname" name="salary" placeholder="Salary">
+      <select name="exper" class="sel">
+        <option value="Junior">Junior Level</option>
+        <option value="Mid">Mid Level</option>
+        <option value="Senior">High Level</option>
+      </select>
+      <select name="type_time" class="sel">
+
+        <option value="Internship">Internship</option>
+        <option value="Part-time">Part-time</option>
+        <option value="Full-time"> Full-time</option>
+      </select>
       <textarea name="feed_post" placeholder="Summary"></textarea>
      <center><input type="submit" id="fd" value="POST"></center>
     </form>
