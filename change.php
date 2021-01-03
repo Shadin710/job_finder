@@ -4,9 +4,10 @@
     {
         header('Location:auth.php');
     }
-
+   
     if($_SERVER['REQUEST_METHOD']=='POST')
     {
+        
         include_once 'includes/db_connection.php';
         include_once 'includes/variable.php';
         $skill0 =  $skill1 =  $skill2 =  $skill3 =  $skill4 = $addres = $new_email = $uname = $full_name = $company_name = $cur_pass = '';
@@ -54,33 +55,34 @@
 
         if(strcmp($cur_pass,$_SESSION['main_pass'])<>0)
         {
-            $pass_matchErr = "Password doesn't match with the main password";
+           echo "Password doesn't match with the main password " . $cur_pass;
         }
         else
         {
             if(!preg_match($name_regex,$uname) and $uname!='')
             {
-                $name_err = "First letter must be capital letter and must have numbers";
+                echo "First letter must be capital letter and must have numbers";
             }
             elseif(!preg_match($email_regex,$new_email) and $new_email!='')
             {
-                $email_err = "Not a proper email";
+               echo "Not a proper email";
             }
             elseif(!preg_match($pass_regex,$new_pass) and $new_pass !='')
             {
-                $pass_err = 'Password must start with a capital letter' . '<br>' . ' and must have numbers in the end and must be minium 6 characters long';
+                echo 'Password must start with a capital letter' . '<br>' . ' and must have numbers in the end and must be minium 6 characters long';
             }
 
             if(strcmp($re_pass,$new_pass)<>0 and $new_pass !='')
             {
-                $repass = "New password and retyped password doesn't match";
+                echo "New password and retyped password doesn't match";
             }
             else
             {
                 $sql_bio = 'SELECT * FROM user_bio';
                 $result_bio = mysqli_query($conn,$sql_bio) or die("Failed to query" . mysqli_connect_error());
                 $get_bio = mysqli_fetch_assoc($result_bio);
-                if($uname == '')
+               
+                if($uname=='')
                 {
                     $uname = $get_bio['username'];
                 }
@@ -94,11 +96,11 @@
                 }
                 if ($occupation=='') 
                 {
-                    $occupation = $get_bio['occupation']
+                    $occupation = $get_bio['occupation'];
                 }
                 if ($cname1=='') 
                 {
-                    $cname1 = $get_bio['work_place1']
+                    $cname1 = $get_bio['work_place1'];
                 }
                 if ($cname2=='') 
                 {
@@ -136,7 +138,7 @@
                 {
                     $skill3 = $get_bio['skill3'];
                 }
-                if ($skill4) 
+                if ($skill4 =='') 
                 {
                     $skill4 = $get_bio['skill4'];
                 }
@@ -171,7 +173,7 @@
 
                 //new email will produce an error
 
-                if($new_email!= $_SESSION['email'])
+                if(strcmp($new_email,$email)<>0)
                 {
                     $sql_e ="SELECT * FROM user_info WHERE email = '$new_email'";
                     $result = mysqli_query($conn,$sql_e) or die("Failed to query the database" . mysqli_connect_error());
@@ -186,13 +188,23 @@
                 else
                 {
                     $sql_update = "UPDATE user_bio SET username = '$uname', email = '$new_email',occupation= '$occupation', work_place1 = '$cname1',work_place2='$cname2',position_1='$postion1',position_2='$postion2',uni_name='$uni_name',high_name='$high_name',skill0='$skill0',skill1='$skill1',skill2='$skill2',skill3='$skill3',skill4='$skill4',phone_number='$phone_number',fb_url='$fb_url',web_url='$web_url',addres='$addres',country='$country',dob='$dob',gender='$gender' where email = '$email'";
+                   
+                    $_SESSION['email'] = $new_email;
                     if(!mysqli_query($conn,$sql_update))
                     {
                         die("Failed to update your profile" . mysqli_connect_error());
                     }
                     else
                     {
-                        header("Location:profile.php");
+                        $sql_up_u = "UPDATE user_info SET username ='$uname', email = '$new_email', pass = '$new_pass' where email = '$email'";
+                        if(!mysqli_query($conn,$sql_up_u))
+                        {
+                            die("Failed to insert updated data in user info" . mysqli_connect_error());
+                        }
+                        else
+                        {
+                            header("Location:profile.php");
+                        }
                     }
                 }
             

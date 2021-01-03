@@ -72,7 +72,7 @@
             <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-change-password">Change password</a>
             <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-info">Info</a>
             <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-social-links">Education & Occupation</a>
-            <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-connections">Connections</a>
+            <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-connections">Skills</a>
           </div>
         </div>
         <div class="col-md-9">
@@ -192,8 +192,14 @@
                   <label class="form-label">Facebook</label>
                   <input type="text" class="form-control" value="" name= "fb_url">
                 </div>
+                <div class="form-group">
+                  <label class="form-label">Current password</label>
+                  <input type="password" class="form-control" name = "pass">
+                  <span class = "error"><?php echo $pass_matchErr;?></span>
+                </div>
               </div>
             </div>
+ 
             <div class="tab-pane fade" id="account-social-links">
               <div class="card-body pb-2">
 

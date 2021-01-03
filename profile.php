@@ -45,31 +45,25 @@
 
         <ul class="menu-left">
             <li>
-                <a href="find_job.php">Find a job</a>
+                <a href="homepage.php">Homepage</a>
             </li>
             <li>
-                <a href="feed.php">News Feed</a>
+                <a href="feed.php">Post a Job</a>
             </li>
             <li>
-                <a href="company_review.php">Company reviews</a>
+                <a href="Notification.php">Notifications</a>
             </li>
             <li>
                 <a href="profile.php">Profile</a>
             </li>
             <li>
-                <a href="find_salaries.php">Settings</a>
+                <a href="search.php">Search</a>
             </li>
             <li>
                 <a href="logout.php">Logout</a>
             </li>
         </ul>
-        <ul class="menu-right">
-            <li class="menu-cta">
-                <a href="auth.php">
-                    Get Started
-                </a>
-            </li>
-        </ul>
+
     </div>
 </header>
 <div class="container">
@@ -83,7 +77,16 @@
             </div>
 
             <div class="profile-header-info">
-                <h4 class="m-t-sm"><?php echo $row1['username'];?></h4>
+                <h4 class="m-t-sm"><?php    
+                                            if (!empty($row1['username']))
+                                            {
+                                                echo $row1['username'];
+                                            }
+                                            else
+                                            {
+                                                echo '';
+                                            }
+                                    ;?></h4>
                 <p class="m-b-sm"><?php echo $row1['occupation'];?></p>
                 <a href="setting.php" class="btn btn-xs btn-primary mb-3">Edit Profile</a>
             </div>
@@ -114,11 +117,11 @@
                                     <td class="field">Work</td>
                                     <td class="value">
                                         <div class="m-b-5">
-                                            <b><?php echo $row1['work_place1'];?></b> <a href="#" class="m-l-10">Edit</a><br />
+                                            <b><?php echo $row1['work_place1'];?></b> <br />
                                             <span class="text-muted"><?php echo $row1['position_1'];?></span>
                                         </div>
                                         <div>
-                                            <b><?php echo $row1['work_place2'];?></b> <a href="#" class="m-l-10">Edit</a><br />
+                                            <b><?php echo $row1['work_place2'];?></b> <br />
                                             <span class="text-muted"><?php echo $row1['position_2'];?></span>
                                         </div>
                                     </td>
@@ -127,11 +130,11 @@
                                     <td class="field">Education</td>
                                     <td class="value">
                                         <div class="m-b-5">
-                                            <b><?php echo "University (2009)";?></b> <a href="#" class="m-l-10">Edit</a><br />
+                                            <b><?php echo "University (2009)";?></b> <br />
                                             <span class="text-muted"><?php echo $row1['uni_name'];?></span>
                                         </div>
                                         <div>
-                                            <b>High School (2006)</b> <a href="#" class="m-l-10">Edit</a><br />
+                                            <b>High School (2006)</b> <br />
                                             <span class="text-muted"><?php echo $row1['high_name'];?></span>
                                         </div>
                                     </td>
@@ -141,7 +144,15 @@
                                     <td class="value">
                                         <?php
                                             for ($i=0; $i <5 ; $i++) { 
-                                                echo $row1['skill'.$i];
+                                                if ($i==4) {
+                                                    echo $row1['skill'.$i];
+                                                }
+                                                else
+                                                {
+                                                    echo $row1['skill'.$i] . ",";
+                                                }
+                                                
+
                                             }
                                         ?>
                                     </td>
@@ -161,7 +172,7 @@
                                        <?php
                                             echo $row1['phone_number'];
                                        ?>
-                                        <a href="#" class="m-l-10">Edit</a>
+                                        
                                     </td>
                                 </tr>
                                 <tr>
@@ -170,16 +181,24 @@
                                      <?php
                                             echo $row1['email'];
                                        ?>
-                                        <a href="#" class="m-l-10">Edit</a>
+                                        
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="field">Facebook</td>
                                     <td class="value">
                                     <?php
-                                            echo $row1['fb_url'];
+                                            if (!empty($row1['fb_url'])) 
+                                            {
+                                                echo $row1['fb_url'];    
+                                            }
+                                            else
+                                            {
+                                                echo "N/A";
+                                            }
+                                            
                                        ?>
-                                        <a href="#" class="m-l-10">Edit</a>
+                                        
                                     </td>
                                 </tr>
                                 <tr>
@@ -188,15 +207,13 @@
                                     <?php
                                             echo $row1['web_url'];
                                        ?>
-                                        <a href="#" class="m-l-10">Edit</a>
+                                        
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="field">Address</td>
                                     <td class="value">
-                                        Twitter, Inc. <a href="#" class="m-l-10">Edit</a><br />
-                                        1355 Market Street, Suite 900<br />
-                                        San Francisco, CA 94103
+                                        <?php echo $row1['addres']?>
                                     </td>
                                 </tr>
                             </tbody>
@@ -214,7 +231,7 @@
                                     <?php
                                             echo $row1['dob'];
                                     ?>
-                                        <a href="#" class="m-l-10">Edit</a>
+                                        
                                     </td>
                                 </tr>
                                 <tr>
@@ -223,21 +240,21 @@
                                     <?php
                                             echo $row1['gender'];
                                     ?>
-                                        <a href="#" class="m-l-10">Edit</a>
+                                       
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="field">Facebook</td>
                                     <td class="value">
                                         <?php echo $row1['fb_url']?>
-                                        <a href="#" class="m-l-10">Edit</a>
+                                        
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="field">Website</td>
                                     <td class="value">
                                         <?php echo $row1['web_url']?>
-                                        <a href="#" class="m-l-10">Edit</a>
+                                        
                                     </td>
                                 </tr>
                             </tbody>
@@ -260,11 +277,15 @@
                         <div class="value"> <?php
                         for ($i=0; $i <5 ; $i++) 
                         { 
-                            echo $row1['skill'.$i] . ', ';
-                            if($i==5)
+                            if($i==4)
                             {
                                 echo $row1['skill'.$i];
                             }
+                            else
+                            {
+                                echo $row1['skill'.$i] . ', ';
+                            }
+ 
                         }
                         ?>
                         </div>
@@ -281,9 +302,7 @@
                         <div class="field">Address:</div>
                         <div class="value">
                             <address class="m-b-0">
-                                Twitter, Inc.<br />
-                                1355 Market Street, Suite 900<br />
-                                San Francisco, CA 94103
+                            <?php echo $row1['addres']?>
                             </address>
                         </div>
                     </li>
