@@ -13,9 +13,10 @@
             $result = mysqli_query($conn,$sql) or die("Failed to query the database" . mysqli_connect_error());
 
             $row = mysqli_fetch_assoc($result);
-            
+            $id = $row['id'];
             if($row['email']==$email && $row['pass'] == $password)
             {
+                $_SESSION['owner_id'] = $id;
                 $_SESSION['email']=$email;
                 $_SESSION['main_pass'] = $password;
                 header('Location:homepage.php');   
