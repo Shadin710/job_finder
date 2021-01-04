@@ -406,10 +406,10 @@
 		<div class="job-tab text-center">
 			<ul class="nav nav-tabs justify-content-center" role="tablist">
 				<li role="presentation" class="active">
-					<a class="active show" href="#hot-jobs" aria-controls="hot-jobs" role="tab" data-toggle="tab" aria-selected="true">Hot Jobs</a>
+					<a class="active show" href="#hot-jobs" aria-controls="hot-jobs" role="tab" data-toggle="tab" aria-selected="true">Best Jobs</a>
 				</li>
 				<li role="presentation"><a href="#recent-jobs" aria-controls="recent-jobs" role="tab" data-toggle="tab" class="" aria-selected="false">Recent Jobs</a></li>
-				<li role="presentation"><a href="#popular-jobs" aria-controls="popular-jobs" role="tab" data-toggle="tab" class="" aria-selected="false">Popular Jobs</a></li>
+				<li role="presentation"><a href="#popular-jobs" aria-controls="popular-jobs" role="tab" data-toggle="tab" class="" aria-selected="false">Recommended Jobs</a></li>
 			</ul>
 			<div class="tab-content text-left">
 				<div role="tabpanel" class="tab-pane fade active show" id="hot-jobs">
@@ -425,8 +425,8 @@
 											<div class="job-info">
 												<a href="#" class="btn btn-primary">'. $row_best['type_time'] .'</a>
 												<span class="tr-title">
-													<a href="#">' . $row_best['position'] . '</a>
-													<span><a href="#">Dig File</a></span>
+													<a href= apply.php?id=' . $row_best['id'] . '>' . $row_best['position'] . '</a>
+													<span><a href=apply.php?id=' . $row_best['id'] . '>Apply</a></span>
 												</span>
 												<ul class="tr-list job-meta">
 													<li><i class="fa fa-map-signs" aria-hidden="true"></i>' . $row_best['comAddress'] . '</li>
@@ -483,8 +483,8 @@
 										<div class="job-info">
 										<a href="#" class="btn btn-primary">'. $row_recent['type_time'] .'</a>
 											<span class="tr-title">
-												<a href="#">' . $row_recent['position'] . '</a>
-												<span><a href="#">Loop</a></span>
+												<a href=apply.php?id=' . $row_recent['id'] . '>' . $row_recent['position'] . '</a>
+												<span><a href=apply.php?id=' . $row_recent['id'] . '>Apply</a></span>
 											</span>
 											<ul class="tr-list job-meta">
 												<li><i class="fa fa-map-signs" aria-hidden="true"></i>' . $row_recent['comAddress'] . '</li>
@@ -531,6 +531,8 @@
 						<?php
 							if($recommend_check>0)
 							{
+								$count_arry = array();
+							
 								while($row_recommend = mysqli_fetch_assoc($result_recommend))
 								{
 									$count_recom=0;
@@ -560,8 +562,10 @@
 										$count_recom++;
 									}
 									//storing the count value in another array by using array_push 
-									$count_arry = array();
+									
 									array_push($count_arry,$count_recom);
+									
+								
 								}
 								$refactor_index = array();
 								for ($i=0; $i <$recommend_check; $i++) { 
@@ -580,12 +584,13 @@
 											$count_arry[$pos] = -1;
 										}
 								}
-								
+							$j=0;
+							
 							for ($i=0; $i <count($refactor_index);$i++) 
 							{ 
 									
 								$cou=0;
-								$j=0;
+								//echo $refactor_index[$i];
 								$result_r=array();
 								$result_r[$j] = mysqli_query($conn,$sql_recommend) Or die("Failed to query " . mysqli_error($conn));
 
@@ -593,15 +598,16 @@
 								{ 
 								
 									if($cou == $refactor_index[$i])
-									{	
+									{
+											
 										echo '<div class="col-md-6 col-lg-3">
 										<div class="job-item">
 											<div class="item-overlay">
 												<div class="job-info">
 													<a href="#" class="btn btn-primary">' . $row_r['type_time'] . '</a>
 													<span class="tr-title">
-														<a href="#">' . $row_r['position'] . '</a>
-														<span><a href="#">Fox</a></span>
+														<a href=apply.php?id=' . $row_r['id'] . '>' . $row_r['position'] . '</a>
+														<span><a href=apply.php?id=' . $row_r['id'] . '>Apply</a></span>
 													</span>
 													<ul class="tr-list job-meta">
 														<li><i class="fa fa-map-signs" aria-hidden="true"></i>' . $row_r['comAddress'] . '</li>
