@@ -19,6 +19,10 @@
     $sql_apply_search = "SELECT * FROM applied_job WHERE u_id = '$u_id'";
     $result_ap = mysqli_query($conn,$sql_apply_search) Or die("Failed to query " . mysqli_error($conn));
     $row_check = mysqli_num_rows($result_ap);
+
+    $sql_approve = "SELECT * FROM approve WHERE u_id = '$u_id'";
+    $result_dis = mysqli_query($conn,$sql_approve) Or die("Failed to query " .  mysqli_query($conn));
+    $row_check2 = mysqli_num_rows($result_dis);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -233,18 +237,27 @@
 
     <!-- MENU LINKS  -->
 
-        <ul class="menu-left">
+    <ul class="menu-left">
             <li>
-                <a href="find_job.php">Find a job</a>
+                <a href="homepage.php">Homepage</a>
             </li>
             <li>
                 <a href="feed.php">Post a job</a>
             </li>
             <li>
-                <a href="company_review.php">Company reviews</a>
+                <a href="search.php">Search</a>
             </li>
             <li>
-                <a href="find_salaries.php">Find Salaries</a>
+                <a href="Notification.php">Notifications</a>
+            </li>
+            <li>
+                <a href="profile.php">Profile</a>
+            </li>
+            <li>
+                <a href="request.php">Requested Job</a>
+            </li>
+            <li>
+                <a href="logout.php">Logout</a>
             </li>
         </ul>
     </div>
@@ -296,17 +309,31 @@
          <!-- Info -->
          <div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
             <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black g-mb-20">Approved</h3>
-            <div class="noty_bar noty_type__info noty_theme__unify--v1--light g-mb-25">
-               <div class="noty_body">
-                  <div class="g-mr-20">
-                     <div class="noty_body__icon">
-                        <i class="hs-admin-info"></i>
-                     </div>
-                  </div>
-                  <div>Hi, welcome to Unify. This is example of Toastr notification box.</div>
-               </div>
-            </div>
             
+            <?php
+              if ($row_check2>0) 
+              {
+                while ($row_job2 = mysqli_fetch_assoc($result_dis)) 
+                {
+                    $job_id2 = $row_job2['job_id']; 
+
+                    $show_jobs2 = "SELECT * FROM post_job WHERE id ='$job_id'";
+                    $result_show2 = mysqli_query($conn,$show_jobs2) Or die("Failed to the query " .  mysqli_error($conn));
+
+                    $show_j2 = mysqli_fetch_assoc($result_show2);
+                    echo '<div class="noty_bar noty_type__info noty_theme__unify--v1--light g-mb-25">
+                    <div class="noty_body">
+                       <div class="g-mr-20">
+                          <div class="noty_body__icon">
+                             <i class="hs-admin-info"></i>
+                          </div>
+                       </div>
+                       <div>Hi,' . $row_user['username'] . ' You have been accepted for ' . $show_j2['comName'] . '</div>
+                    </div>
+                 </div>';
+                }
+              }
+            ?>
 
          </div>
          <!-- End Info -->
