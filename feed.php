@@ -66,32 +66,34 @@ small{
 
     <!-- MENU LINKS  -->
 
-        <ul class="menu-left">
+    <ul class="menu-left">
             <li>
-                <a href="find_job.php">Find a job</a>
+                <a href="homepage.php">Homepage</a>
             </li>
             <li>
-                <a href="feed.php">News Feed</a>
+                <a href="feed.php">Post a job</a>
             </li>
             <li>
-                <a href="company_review.php">Company reviews</a>
+                <a href="search.php">Search</a>
             </li>
             <li>
-                <a href="Profile.php">Profile</a>
+                <a href="Notification.php">Notifications</a>
             </li>
-        </ul>
-        <ul class="menu-right">
-            <li class="menu-cta">
-                <a href="auth.php">
-                    Admin 
-                </a>
+            <li>
+                <a href="profile.php">Profile</a>
+            </li>
+            <li>
+                <a href="request.php">Requested Job</a>
+            </li>
+            <li>
+                <a href="logout.php">Logout</a>
             </li>
         </ul>
     </div>
 </header>
 
 <section id="intro">
-    <div class="top-right-gradient"></div>
+    
     <div class="wrapper">
     <form action="feed_process.php" method ='POST' id="form">
       <input type="text" id="fname" name="cname" placeholder="Company Name">
@@ -136,7 +138,7 @@ small{
      <center><input type="submit" id="fd" value="POST"></center>
     </form>
     </div>
-    <div class="bottom-left-gradient"></div>
+    
 </section>
 
 
