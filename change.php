@@ -78,7 +78,8 @@
             }
             else
             {
-                $sql_bio = 'SELECT * FROM user_bio';
+                //need to change here
+                $sql_bio = "SELECT * FROM user_bio WHERE email = '$email'";
                 $result_bio = mysqli_query($conn,$sql_bio) or die("Failed to query" . mysqli_connect_error());
                 $get_bio = mysqli_fetch_assoc($result_bio);
                
@@ -207,7 +208,6 @@
                         }
                     }
                 }
-            
             }
         }
     }
