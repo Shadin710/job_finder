@@ -21,19 +21,21 @@
 
     if($row_check>0)
     {
-        $row_del = mysqli_fetch_assoc($res);
-
-        $u_id  = $row_del['u_id'];
-
-        $sql_req_del = "DELETE FROM request WHERE u_id = '$u_id'";
-        if(!mysqli_query($conn,$sql_req_del))
+        while($row_del = mysqli_fetch_assoc($res))
         {
-            die("Failed to delete the data " . mysqli_error($conn));
-        }
-        else
-        {
-            
-            header("Location: request.php");
+
+            $u_id  = $row_del['u_id'];
+
+            $sql_req_del = "DELETE FROM request WHERE u_id = '$u_id'";
+            if(!mysqli_query($conn,$sql_req_del))
+            {
+                die("Failed to delete the data " . mysqli_error($conn));
+            }
+            else
+            {
+
+                header("Location: request.php");
+            }
         }
     }
     
