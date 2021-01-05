@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $email = $_SESSION['email'];
     include_once 'includes/db_connection.php';
 
     if($_SERVER['REQUEST_METHOD']=='POST')
@@ -18,7 +19,7 @@
         $type_time = $_POST['type_time'];
         $summary = $_POST['feed_post'];
         $qua = $_POST['qua'];
-        $owner_id = $_SESSION['owner_id'];
+        
 
         //if($job_count>0)
         //{
@@ -41,6 +42,13 @@
                 $result_id = mysqli_query($conn,$sql_search_id) Or die("Failed to query " . mysqli_connect_error());
                 $result = mysqli_fetch_assoc($result_id);
                 $job_id = $result['id'];
+
+
+                $sql_owner_id = "SELECT * FROM user_bio WHERE email = '$email'";
+                $result_owner = mysqli_query($conn,$sql_owner_id) Or die("Failed to query " . mysqli_connect_error());
+                $row_owner = mysqli_fetch_assoc($result_owner);
+
+                $owner_id = $row_owner['id'];
 
                 $info_owner = "INSERT INTO notify_owner (job_id,owner_id,summary) VALUES ('$job_id','$owner_id','$summary')";
                 if (!mysqli_query($conn,$info_owner)) 
