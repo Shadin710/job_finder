@@ -377,6 +377,9 @@
             </li>
             <li>
                 <a href="profile.php">Profile</a>
+			</li>
+			<li>
+                <a href="request.php">Requested Job</a>
             </li>
             <li>
                 <a href="logout.php">Logout</a>
@@ -583,14 +586,14 @@
 											$pos = $get_index[$j];
 											$count_arry[$pos] = -1;
 										}
+
 								}
 							$j=0;
-							
+							$refactor_index = array_unique($refactor_index);
 							for ($i=0; $i <count($refactor_index);$i++) 
 							{ 
 									
 								$cou=0;
-								//echo $refactor_index[$i];
 								$result_r=array();
 								$result_r[$j] = mysqli_query($conn,$sql_recommend) Or die("Failed to query " . mysqli_error($conn));
 
@@ -660,7 +663,7 @@
 	</div><!-- /.container -->
     </div>
 
-    <div class="top-right-gradient"></div>
+    
 </section>
 
 <!-- About Page END -->
@@ -674,71 +677,7 @@
 
 <!-- FOOTER START -->
 
-<footer>
 
-    <div class="wrapper">
-
-        <div class="footer-left">
-
-            <p class="footer-links">
-
-                <a href="#">About</a>
-                <a href="#">Services</a>
-                <a href="#">Pricing</a>
-                <a href="#">Contact</a>
-
-            </p>
-
-            <p class="footer-company-name"> Pulse Analytics &copy; 2019 - Made By Design Medium</p>
-
-        </div>
-
-        <div class="footer-center">
-
-            <div>
-
-                <i class="fas fa-map-marker-alt"></i>
-                <p><span> 965 Central Rd.</span>Lakewood, NJ 08701</p>
-
-            </div>
-
-            <div>
-
-                <i class="fas fa-phone"></i>
-                <p><span> +1 555 12342342</p>
-
-            </div>
-
-            <div>
-
-                <i class="fas fa-envelope"></i>
-                <p><a href="#">DesignMedium@company.com</a></p>
-
-            </div>
-
-        </div>
-
-        <div class="footer-right">
-
-            <p class="footer-connect">
-                <span> Connect with us</span>
-                Consume out of the box data Analytics anwhere, anytime. Contact us to get Started.
-            </p>
-
-            <div class="footer-icons">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-
-            </div>
-
-        </div>
-    </div>
-
-
-
-</footer>
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
