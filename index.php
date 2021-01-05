@@ -31,18 +31,12 @@
 
     <!-- MENU LINKS  -->
 
-        <ul class="menu-left">
+    <ul class="menu-left">
             <li>
-                <a href="find_job.php">Find a job</a>
+                <a href="index.php">Homepage</a>
             </li>
             <li>
-                <a href="feed.php">Post a job</a>
-            </li>
-            <li>
-                <a href="company_review.php">Company reviews</a>
-            </li>
-            <li>
-                <a href="find_salaries.php">Find Salaries</a>
+                <a href="search.php">Search</a>
             </li>
         </ul>
         <ul class="menu-right">
