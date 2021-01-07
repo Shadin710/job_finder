@@ -436,22 +436,16 @@
 													<li><i class="fa fa-briefcase" aria-hidden="true"></i>' . $row_best['exper'] . '</li>
 													<li><i class="fa fa-money" aria-hidden="true"></i>' . $row_best['salary'] . '</li>
 												</ul>
-												<ul class="job-social tr-list">
-													<li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-													<li><a href="#"><i class="fa fa-expand" aria-hidden="true"></i></a></li>
-													<li><a href="#"><i class="fa fa-bookmark-o" aria-hidden="true"></i></a></li>
-													<li><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></li>
-												</ul>
 											</div>										
 										</div>
 										<div class="job-info">
 											<div class="company-logo">
-												<img src="https://via.placeholder.com/300x100/7B68EE/000000" alt="images" class="img-fluid">
+												
 											</div>
 											<span class="tr-title">
 												<a href="#">' . $row_best['comName'] . '</a><br />
 												<a href="#">' . $row_best['position'] . '</a>
-												<span><a href="#">Dig File</a></span>
+												
 											</span>
 											<ul class="tr-list job-meta">
 												<li><span><i class="fa fa-map-signs" aria-hidden="true"></i></span>' . $row_best['comAddress'] . '</li>
@@ -494,22 +488,17 @@
 												<li><i class="fa fa-briefcase" aria-hidden="true"></i>' . $row_recent['exper'] . '</li>
 												<li><i class="fa fa-money" aria-hidden="true"></i>' . $row_recent['salary'] . '</li>
 											</ul>
-											<ul class="job-social tr-list">
-												<li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-												<li><a href="#"><i class="fa fa-expand" aria-hidden="true"></i></a></li>
-												<li><a href="#"><i class="fa fa-bookmark-o" aria-hidden="true"></i></a></li>
-												<li><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></li>
-											</ul>
+
 										</div>										
 									</div>								
 									<div class="job-info">
 										<div class="company-logo">
-											<img src="https://via.placeholder.com/300x100/DC143C/000000" alt="images" class="img-fluid">
+											
 										</div>
 										<span class="tr-title">
 											<a href="#">' . $row_recent['comName'] . '</a><br />
 											<a href="#">' . $row_recent['position'] . '</a>
-											<span><a href="#">Loop</a></span>
+											
 										</span>
 										<ul class="tr-list job-meta">
 											<li><span><i class="fa fa-map-signs" aria-hidden="true"></i></span>' . $row_recent['comAddress'] . '</li>
@@ -617,22 +606,16 @@
 														<li><i class="fa fa-briefcase" aria-hidden="true"></i>' . $row_r['exper'] . '</li>
 														<li><i class="fa fa-money" aria-hidden="true"></i>' . $row_r['salary'] . '</li>
 													</ul>
-													<ul class="job-social tr-list">
-														<li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-expand" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-bookmark-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></li>
-													</ul>
 												</div>										
 											</div>								
 											<div class="job-info">
 												<div class="company-logo">
-													<img src="https://via.placeholder.com/300x100/87CEFA/000000" alt="images" class="img-fluid">
+													
 												</div>
 												<span class="tr-title">
 													<a href="#">' . $row_r['comName'] . '</a><br />
 													<a href="#">' . $row_r['position'] . '</a>
-													<span><a href="#">Fox</a></span>
+													
 												</span>
 												<ul class="tr-list job-meta">
 													<li><span><i class="fa fa-map-signs" aria-hidden="true"></i></span>' . $row_r['comAddress'] . '</li>
