@@ -35,8 +35,7 @@
 
 
     <!-- MENU LINKS  -->
-
-        <ul class="menu-left">
+    <ul class="menu-left">
             <li>
                 <a href="homepage.php">Homepage</a>
             </li>
@@ -44,10 +43,19 @@
                 <a href="feed.php">Post a Job</a>
             </li>
             <li>
+                <a href="search.php">Search</a>
+            </li>
+            <li>
                 <a href="Notification.php">Notifications</a>
             </li>
             <li>
-                <a href="search.php">Search</a>
+                <a href="profile.php">Profile</a>
+			</li>
+			<li>
+                <a href="request.php">Requested Job</a>
+            </li>
+            <li>
+                <a href="logout.php">Logout</a>
             </li>
         </ul>
         <ul class="menu-right">
@@ -79,13 +87,8 @@
               <div class="card-body media align-items-center">
                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="d-block ui-w-80">
                 <div class="media-body ml-4">
-                  <label class="btn btn-outline-primary">
-                    Upload new photo
-                    <input type="file" class="account-settings-fileinput">
                   </label> &nbsp;
-                 
-
-                  <div class="text-light small mt-1">Allowed JPG, GIF or PNG. Max size of 800K</div>
+            
                 </div>
               </div>
               <hr class="border-light m-0">
@@ -109,6 +112,11 @@
                 <div class="form-group">
                   <label class="form-label">Company</label>
                   <input type="text" class="form-control" value="" name="company_name">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Current password</label>
+                  <input type="password" class="form-control" name = "pass">
+                  <span class = "error"><?php echo $pass_matchErr;?></span>
                 </div>
               </div>
 
@@ -228,6 +236,11 @@
                   <label class="form-label">Position</label>
                   <input type="text" class="form-control" value="" name = "position2">
                 </div>
+                <div class="form-group">
+                  <label class="form-label">Current password</label>
+                  <input type="password" class="form-control" name = "pass">
+                  <span class = "error"><?php echo $pass_matchErr;?></span>
+                </div>
               </div>
             </div>
             <div class="tab-pane fade" id="account-connections">
@@ -255,8 +268,11 @@
               <label class="form-label">Skills</label>
                   <input type="text" class="form-control" value="" name = "skill4">
             </div>
-
-
+            <hr class="border-light m-0">
+              <div class="card-body">
+              <label class="form-label">Current password</label>
+                  <input type="password" class="form-control" value="" name = "pass">
+            </div>
 
           </div>
         </div>
