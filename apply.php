@@ -79,7 +79,7 @@ input[type=submit]:hover {
 
 .col-75 {
   float: left;
-  width: 50%;
+  width: 40%;
   margin-top: 30px;
 }
 
@@ -158,9 +158,12 @@ input[type=submit]:hover {
              </ul> 
              </h3>
              <div class="row">
-                <div class="col-25"> <a href="report.php"><input type="submit" value="Report" id="rep"></a></div>
                 <div class="col-75"><input type="submit" value="Apply" id="app"></div>
+                </form>
+                <div class="col-25"> <a href="report_job.php"><input type="submit" value="Report" id="rep"></a></div>
             </div>
-             </form>
+             
+             
+             
         </div>
         <br>
