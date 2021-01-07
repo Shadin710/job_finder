@@ -43,7 +43,7 @@
 
     <!-- MENU LINKS  -->
 
-        <ul class="menu-left">
+    <ul class="menu-left">
             <li>
                 <a href="homepage.php">Homepage</a>
             </li>
@@ -51,13 +51,16 @@
                 <a href="feed.php">Post a Job</a>
             </li>
             <li>
+                <a href="search.php">Search</a>
+            </li>
+            <li>
                 <a href="Notification.php">Notifications</a>
             </li>
             <li>
                 <a href="profile.php">Profile</a>
-            </li>
-            <li>
-                <a href="search.php">Search</a>
+			</li>
+			<li>
+                <a href="request.php">Requested Job</a>
             </li>
             <li>
                 <a href="logout.php">Logout</a>
@@ -73,7 +76,7 @@
 
         <div class="profile-header-content">
             <div class="profile-header-img">
-                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" />
+                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
             </div>
 
             <div class="profile-header-info">
@@ -92,13 +95,6 @@
             </div>
         </div>
 
-        <ul class="profile-header-tab nav nav-tabs">
-            <li class="nav-item"><a href="#profile-post" class="nav-link" data-toggle="tab">POSTS</a></li>
-            <li class="nav-item"><a href="#profile-about" class="nav-link active show" data-toggle="tab">ABOUT</a></li>
-            <li class="nav-item"><a href="#profile-photos" class="nav-link" data-toggle="tab">PHOTOS</a></li>
-            <li class="nav-item"><a href="#profile-videos" class="nav-link" data-toggle="tab">VIDEOS</a></li>
-            <li class="nav-item"><a href="#profile-friends" class="nav-link" data-toggle="tab">FRIENDS</a></li>
-        </ul>
     </div>
 
     <div class="profile-container">
