@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="CSS/feed.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <style> 
+    *{
+        font-family: Arial, Helvetica, sans-serif;
+    }
 input[type=text] {
   width: 100%;
   padding: 12px 20px;
