@@ -37,7 +37,7 @@
                         <h2 class="text-center" style=" font-family:'Baloo Tamma 2', cursive;">Log-In</h2>
                         <h6 class="text-muted" style="margin-top: 0.4rem;">Please Log-in to continue</h6>
 
-                        <form novalidate action="login.php" id="form" method="POST" onsubmit=" return validate() ">
+                        <form novalidate action="login.php" id="form" method="POST">
                             <input type="email" id="email" class="input input1" placeholder="Email" name="email" style ="color: black" ><br>
                             <small style="margin-bottom: 0.3rem; font-style: italic;" id="error"></small>
 
@@ -45,23 +45,11 @@
                                 name="password">
                             <small style="margin-bottom: 0.3rem; font-style: italic;" id="passerror"></small>
                             <br>
-                            <a href="forgetPass.php" style="text-decoration: none;font-size: 12px;">Forgot
-                                password?</a><br><br>
+                            <a href="index.php" style="text-decoration: none;font-size: 12px;">Go Back</a><br><br>
                             <input type="submit" class="btn btn-danger btn-danger1" value="Log-In"
                                 style="margin-bottom: 10px;width: 100%;"><br>
-                            <!----FORM-CHECKBOX-------------->
-                            <input class="form-check-input" style="margin-left: 5px;margin-top: 7px;" type="checkbox"
-                                value="" id="defaultCheck1">
-                            <label class="form-check-label" style="font-size: 12px;margin-left: 22px;"
-                                for="defaultCheck1">Keep me logged in</label><br><br>
                         </form>
-                        <div class="text-center text-muted">Or LogIn With</div><br>
-                        <hr class="my-2">
-                        <div class="social-icon-pack text-center">
-                            <i class="fab fa-facebook"></i>
-                            <a href="/auth/google"><i class="fab fa-google"></i></a>
-                            <i class="fab fa-linkedin"></i>
-                        </div>
+
                     </div>
                 </div>
                 <!-----COMPANY-TEXT---->
