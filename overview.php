@@ -44,7 +44,7 @@
 
     <!-- MENU LINKS  -->
 
-        <ul class="menu-left">
+    <ul class="menu-left">
             <li>
                 <a href="homepage.php">Homepage</a>
             </li>
@@ -52,13 +52,16 @@
                 <a href="feed.php">Post a Job</a>
             </li>
             <li>
+                <a href="search.php">Search</a>
+            </li>
+            <li>
                 <a href="Notification.php">Notifications</a>
             </li>
             <li>
                 <a href="profile.php">Profile</a>
-            </li>
-            <li>
-                <a href="search.php">Search</a>
+			</li>
+			<li>
+                <a href="request.php">Requested Job</a>
             </li>
             <li>
                 <a href="logout.php">Logout</a>
@@ -90,7 +93,7 @@
                                     ;?></h4>
                 <p class="m-b-sm"><?php echo $row1['occupation'];?></p>
                 <a href="accept.php" class="btn btn-xs btn-primary mb-3">Accept</a>
-                <a href="reject.php" class="btn btn-xs btn-primary mb-3">Reject</a>
+                
             </div>
         </div>
 
