@@ -9,11 +9,11 @@
         $position = $_POST['position'];
         $comAddress = $_POST['caddress'];
         $res = $_POST['res'];
-        $skill0 = $_POST['skill0'];
-        $skill1 = $_POST['skill1'];
-        $skill2 = $_POST['skill2'];
-        $skill3 = $_POST['skill3'];
-        $skill4 = $_POST['skill4'];
+        $skill0 = strtolower($_POST['skill0']);
+        $skill1 = strtolower($_POST['skill1']);
+        $skill2 = strtolower($_POST['skill2']);
+        $skill3 = strtolower($_POST['skill3']);
+        $skill4 = strtolower($_POST['skill4']);
         $salary = $_POST['salary'];
         $exper = $_POST['exper'];
         $type_time = $_POST['type_time'];
