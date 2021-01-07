@@ -177,7 +177,7 @@ color: #8A98AC;
                                     <table >
                                         <tr>    
                                             <td><a href=accept.php?id=' . $row_info['u_id'] . '><button type="button" class="btn btn-primary-rgba"><i class="feather icon-message-square mr-2"></i>Accept</button></a></td>
-                                            <td><form action="reject.php"><button type="button" class="btn btn-success-rgba"><i class="feather icon-phone mr-2"></i>Call Now</button></form></td>
+                                            <td><form action="reject.php"><button type="button" class="btn btn-success-rgba"><i class="feather icon-phone mr-2"></i>Reject</button></form></td>
                                         </tr>
                                     </table>
                                     
