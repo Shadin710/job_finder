@@ -245,9 +245,6 @@
                 <a href="feed.php">Post a job</a>
             </li>
             <li>
-                <a href="search.php">Search</a>
-            </li>
-            <li>
                 <a href="Notification.php">Notifications</a>
             </li>
             <li>
@@ -313,6 +310,7 @@
             <?php
               if ($row_check2>0) 
               {
+                
                 while ($row_job2 = mysqli_fetch_assoc($result_dis)) 
                 {
                     $job_id2 = $row_job2['job_id']; 
@@ -331,6 +329,7 @@
                        <div>Hi,' . $row_user['username'] . ' You have been accepted for ' . $show_j2['comName'] . '</div>
                     </div>
                  </div>';
+                 
                 }
               }
             ?>
