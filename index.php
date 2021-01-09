@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pulse Analytics | Home</title>
+    <title>Job finder</title>
     <link rel="stylesheet" href="CSS/index.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
@@ -35,13 +35,11 @@
             <li>
                 <a href="index.php">Homepage</a>
             </li>
-            <li>
-                <a href="search.php">Search</a>
-            </li>
+
         </ul>
         <ul class="menu-right">
             <li class="menu-cta">
-                <a href="admin_auth.php">
+                <a href="admin_login.php">
                     Admin
                 </a>
             </li>
@@ -58,7 +56,7 @@
 
 
 <section id="intro">
-    <div class="top-right-gradient"></div>
+   
     <div class="wrapper">
         <div class="intro-left">
             <h1>Insights which will help you to grow</h1>
@@ -74,7 +72,7 @@
             <img src="images/undraw_growth_analytics_8btt.png" alt="image">
         </div>
     </div>
-    <div class="bottom-left-gradient"></div>
+    
 </section>
 
 <!-- Intro Page END -->
@@ -93,95 +91,15 @@
             <p>
                 we help you to find job depending on your skills and experience because of that you can choose the best job that suits you 
             </p>
-            <a href="#" class="cta">Sign-up</a>
+            <a href="auth.php" class="cta">Sign-up</a>
         </div>
     </div>
 
-    <div class="top-right-gradient"></div>
+    
 </section>
 
-<!-- About Page END -->
-
-<!-- Page Banner START -->
-
-<div class="page-banner">
-    <h1>Analytics Made Easy</h1>
-    <h3>Experience the next generation Analytics</h3>
-    <a href="auth.php">Sign-Up</a>
-</div>
-
-<!-- Banner END -->
 
 
-<!-- FOOTER START -->
-
-<footer>
-
-    <div class="wrapper">
-
-        <div class="footer-left">
-
-
-
-            <p class="footer-links">
-
-                <a href="#">About</a>
-                <a href="#">Services</a>
-                <a href="#">Pricing</a>
-                <a href="#">Contact</a>
-
-            </p>
-
-            <p class="footer-company-name"> Pulse Analytics &copy; 2019 - Made By Design Medium</p>
-
-        </div>
-
-        <div class="footer-center">
-
-            <div>
-
-                <i class="fas fa-map-marker-alt"></i>
-                <p><span> 965 Central Rd.</span>Lakewood, NJ 08701</p>
-
-            </div>
-
-            <div>
-
-                <i class="fas fa-phone"></i>
-                <p><span> +1 555 12342342</p>
-
-            </div>
-
-            <div>
-
-                <i class="fas fa-envelope"></i>
-                <p><a href="#">DesignMedium@company.com</a></p>
-
-            </div>
-
-        </div>
-
-        <div class="footer-right">
-
-            <p class="footer-connect">
-                <span> Connect with us</span>
-                Consume out of the box data Analytics anwhere, anytime. Contact us to get Started.
-            </p>
-
-            <div class="footer-icons">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-
-            </div>
-
-        </div>
-    </div>
-
-
-
-</footer>
 
 <script>
 
