@@ -5,6 +5,8 @@
     {
         header("Location:admin_login.php");
     }
+    include_once 'includes/db_connection.php';
+
     $id = $_SESSION['job_id'];
     $sql_del = "DELETE FROM report_job WHERE job_id = '$id'";
     if (!mysqli_query($conn,$sql_del)) 
