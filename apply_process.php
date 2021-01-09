@@ -5,8 +5,7 @@
     
     $email = $_SESSION['email'];
     $id = $_SESSION['job_id'];
-    if($_SERVER['REQUEST_METHOD']=='POST')
-    {
+
         $sql_apply = "SELECT * FROM user_bio WHERE email  ='$email'";
         $result = mysqli_query($conn,$sql_apply) Or die("Failed to query " . mysqli_error($conn));
         $row_user = mysqli_fetch_assoc($result);
@@ -46,5 +45,5 @@
             }
             
         }
-    }
+    
 ?>
