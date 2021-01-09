@@ -50,9 +50,7 @@
             <li>
                 <a href="feed.php">Post a Job</a>
             </li>
-            <li>
-                <a href="search.php">Search</a>
-            </li>
+
             <li>
                 <a href="Notification.php">Notifications</a>
             </li>
@@ -126,11 +124,11 @@
                                     <td class="field">Education</td>
                                     <td class="value">
                                         <div class="m-b-5">
-                                            <b><?php echo "University (2009)";?></b> <br />
+                                            <b><?php echo "University ";?></b> <br />
                                             <span class="text-muted"><?php echo $row1['uni_name'];?></span>
                                         </div>
                                         <div>
-                                            <b>High School (2006)</b> <br />
+                                            <b>High School</b> <br />
                                             <span class="text-muted"><?php echo $row1['high_name'];?></span>
                                         </div>
                                     </td>
