@@ -120,25 +120,17 @@ input[type=submit]:hover {
 
         <ul class="menu-left">
             <li>
-                <a href="homepage.php">Homepage</a>
+                <a href="admin_dashboard.php">Homepage</a>
             </li>
+
             <li>
-                <a href="feed.php">Post a job</a>
-            </li>
-            <li>
-                <a href="profile.php">Profile</a>
-            </li>
-            <li>
-                <a href="search.php">Search</a>
-            </li>
-            <li>
-                <a href="logout.php">Logout</a>
+                <a href="admin_logout.php">Logout</a>
             </li>
         </ul>
     </div>
 </header>
 <div class='container'>
-             <form action='delete_post.php' method="POST">
+             
              <h1><b>Company Name: </b><?php echo $row['comName'];?></h1>
              <h3><b>Position offering: </b><?php echo $row['position'];?></h3>
              <h3><b>Address: </b><?php echo $row['comAddress'];?> </h3>
@@ -159,8 +151,8 @@ input[type=submit]:hover {
              </h3>
              <div class="row">
                 <div class="col-25"> <a href="delete_report.php"><input type="submit" value="Ignore" id="rep"></a></div>
-                <div class="col-75"><input type="submit" value="Delete Job" id="app"></div>
+                <div class="col-75"><a href="delete_post.php"><input type="submit" value="Delete Job" id="app"></a></div>
             </div>
-             </form>
+            
         </div>
         <br>
