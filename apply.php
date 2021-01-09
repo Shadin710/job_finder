@@ -73,7 +73,7 @@ input[type=submit]:hover {
 
 .col-25 {
   float: left;
-  width: 25%;
+  width: 20%;
   margin-top: 30px;
 }
 
@@ -119,26 +119,30 @@ input[type=submit]:hover {
     <!-- MENU LINKS  -->
 
         <ul class="menu-left">
-            <li>
+        <li>
                 <a href="homepage.php">Homepage</a>
             </li>
             <li>
                 <a href="feed.php">Post a job</a>
             </li>
             <li>
+                <a href="Notification.php">Notifications</a>
+            </li>
+            <li>
                 <a href="profile.php">Profile</a>
             </li>
             <li>
-                <a href="search.php">Search</a>
+                <a href="request.php">Requested Job</a>
             </li>
             <li>
                 <a href="logout.php">Logout</a>
             </li>
         </ul>
+        </ul>
     </div>
 </header>
 <div class='container'>
-             <form action='apply_process.php' method="POST">
+            
              <h1><b>Company Name: </b><?php echo $row['comName'];?></h1>
              <h3><b>Position offering: </b><?php echo $row['position'];?></h3>
              <h3><b>Address: </b><?php echo $row['comAddress'];?> </h3>
@@ -158,12 +162,16 @@ input[type=submit]:hover {
              </ul> 
              </h3>
              <div class="row">
-                <div class="col-75"><input type="submit" value="Apply" id="app"></div>
-                </form>
+                <div class="col-75"><a href="apply_process.php"><input type="submit" value="Apply" id="app"></a></div>
                 <div class="col-25"> <a href="report_job.php"><input type="submit" value="Report" id="rep"></a></div>
+                
+                
             </div>
              
              
              
         </div>
         <br>
+</body>
+</html>
+        
