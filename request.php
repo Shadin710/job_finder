@@ -110,9 +110,7 @@ color: #8A98AC;
             <li>
                 <a href="feed.php">Post a job</a>
             </li>
-            <li>
-                <a href="search.php">Search</a>
-            </li>
+
             <li>
                 <a href="Notification.php">Notifications</a>
             </li>
